@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -13,7 +15,6 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -37,9 +38,62 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.5.0'
     implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //Material Design
+    implementation "com.google.android.material:material:$materialVersion"
+
+    //Lifecycle Extensions
+    implementation "android.arch.lifecycle:extensions:$lifeCycleExtensionVersion"
+
+    //Room
+    implementation "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+
+    //Kotlin Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+
+    //Preferences
+    implementation "androidx.preference:preference-ktx:$preferencesVersion"
+
+    //Weather Image
+    implementation "com.github.pwittchen:weathericonview:$weatherIconViewVersion"
+
+    //CalenderView
+    implementation "com.github.shrikanth7698:Collapsible-Calendar-View-Android:$calendarVersion"
+
+    //Google Play Services
+    implementation "com.google.android.gms:play-services-location:$googlePlayLocation"
+
+    //VegaLayoutManager
+    implementation "com.stone.vega.library:VegaLayoutManager:$vega_version"
+
+    //Lifecycle KTX
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    //Algolia Search
+    implementation "com.algolia:instantsearch-android:$algolia_version"
+
+    //Paging Library
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+
+    //Elastic view
+    implementation "com.github.skydoves:elasticviews:$elastic_version"
+
+    //WorkManager
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+
+
+
 }
